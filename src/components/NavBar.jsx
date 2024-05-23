@@ -6,20 +6,17 @@ import {
   Collapse,
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import useCustomTheme from "../hooks/useCustomTheme";
 
 function NavList() {
-  const [iconMode, setIconMode] = useState(true);
-
-  const toggleIconMode = () => {
-    setIconMode((prevState) => (prevState ? false : true));
-  };
+  const [theme, toggleTheme] = useCustomTheme();
+  const isDarkTheme = theme === "dark";
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <Typography
         as="li"
         variant="paragraph"
-        color="blue-gray"
-        className="p-1 font-bold"
+        className="p-1 font-medium text-blue-gray-900 dark:text-white"
       >
         <a
           href="#"
@@ -31,21 +28,19 @@ function NavList() {
       <Typography
         as="li"
         variant="paragraph"
-        color="blue-gray"
-        className="p-1 font-bold"
+        className="p-1 font-medium text-blue-gray-900 dark:text-white"
       >
         <a
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
-          Project
+          My project
         </a>
       </Typography>
       <Typography
         as="li"
         variant="paragraph"
-        color="blue-gray"
-        className="p-1 font-bold"
+        className="p-1 font-medium text-blue-gray-900 dark:text-white"
       >
         <a
           href="#"
@@ -57,17 +52,18 @@ function NavList() {
 
       <IconButton
         as="li"
-        variant="outlined"
         ripple={true}
-        className="rounded-full"
-        onClick={toggleIconMode}
+        variant="outlined"
+        className="rounded-full border-1 bg-transparent"
+        onClick={toggleTheme}
       >
-        {iconMode ? (
+        {isDarkTheme ? (
+          //* Light Icon
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="size-6"
+            className="size-6 dark:text-white"
           >
             <path
               fillRule="evenodd"
@@ -76,11 +72,12 @@ function NavList() {
             />
           </svg>
         ) : (
+          //* Dark Icon
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className="size-6"
+            className="size-6 text-black"
           >
             <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
           </svg>
@@ -105,8 +102,8 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="max-w-full px-6 py-3">
-      <div className="flex items-center justify-between text-blue-gray-900">
+    <Navbar className="max-w-full px-6 py-3 bg-gray-300 dark:bg-gray-900 mx-auto border-none">
+      <div className="flex items-center justify-between text-blue-gray-900 dark:text-white">
         <Typography
           as="a"
           href="#"
