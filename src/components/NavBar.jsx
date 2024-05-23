@@ -46,7 +46,7 @@ function NavList() {
           href="#"
           className="flex items-center hover:text-blue-500 transition-colors"
         >
-          Contact me
+          My personal assistant
         </a>
       </Typography>
 
