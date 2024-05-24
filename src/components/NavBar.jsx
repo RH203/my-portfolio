@@ -102,7 +102,7 @@ export default function NavBar() {
   }, []);
 
   return (
-    <Navbar className="max-w-full px-6 py-3 bg-gray-300 dark:bg-gray-900 mx-auto border-none">
+    <Navbar className="sticky top-0 z-10 max-w-full px-6 py-3 bg-gray-300 dark:bg-gray-900 mx-auto border-none rounded-none">
       <div className="flex items-center justify-between text-blue-gray-900 dark:text-white">
         <Typography
           as="a"
