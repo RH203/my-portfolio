@@ -1,11 +1,15 @@
-const {
+// const {
+//   GoogleGenerativeAI,
+//   HarmCategory,
+//   HarmBlockThreshold,
+// } = require("@google/generative-ai");
+import {
   GoogleGenerativeAI,
   HarmCategory,
   HarmBlockThreshold,
-} = require("@google/generative-ai");
-require('dotenv').config()
+} from "@google/generative-ai";
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -65,7 +69,69 @@ export default async function runModel(user) {
         role: "model",
         parts: [
           {
-            text: "Raihan Firdaus has extensive experience in hybrid application development and machine learning. He has worked on several projects using the following tech stack:\n\nPython: Raihan has been using Python for over 5 years, primarily in machine learning development and data analysis. One of the projects includes building predictive models for health data analysis using TensorFlow.\n\nTensorFlow: With TensorFlow, Raihan has developed various machine learning models, including image classification and anomaly detection models. He is also experienced in optimizing models for best performance.\n\nJupyter: Raihan frequently uses Jupyter Notebook for data exploration and rapid prototyping. He has built several interactive reports that help in data visualization and in-depth understanding of the data.\n\nFlutter: In hybrid app development, Raihan has used Flutter to build mobile apps that are efficient and have an attractive user interface. One application is an e-learning platform that helps users learn interactively.\n\nReact Native: Raihan is also experienced with React Native for cross-platform mobile application development. He has worked on e-commerce application projects that integrate with various backend services for a seamless shopping experience.\n\nAre there any other aspects of Raihan's experience that you would like to know?",
+            text: "Raihan Firdaus has extensive experience in hybrid application development and machine learning. He has worked on several projects using the following tech stack: Python, Flutter, React native, and Keras\n\nAre there any other aspects of Raihan's experience that you would like to know?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: "Apa hobi Raihan Firdaus" }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Raihan sangat menyukai bermain game, menonton anime, dan dengarkan musik.\n\nApa lagi yang ingin kamu ketahui tentang Raihan?",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [
+          { text: "Apakah ada playlist lagu yang biasa didengarkan Raihan?" },
+        ],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Berikut link playlist Spotify Raihan: \n\n- https://open.spotify.com/playlist/1Ou3P3yrMapfNOh9gjh9de?si=10f50bd7bcde415c",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: "Dimana Raihan tinggal?" }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Surabaya\n\nApakah ada hal lain yang ingin kamu tanyakan ? 😊 \n",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: "Apa kegiatan Raihan Firdaus ?" }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Saat ini Raihan Firdaus mahasiswa aktif di Universitas Telkom Surabaya dan sedang menempuh semester 4 Informatika. \n\nApakah ingin tahu lebih lanjut tentang Raihan? 😊 \n",
+          },
+        ],
+      },
+      {
+        role: "user",
+        parts: [{ text: "Apakah Raihan mempunyai link Github?" }],
+      },
+      {
+        role: "model",
+        parts: [
+          {
+            text: "Ya, tentu saja! Kamu bisa mengunjungi profil Github Raihan di https://github.com/RH203.  \n\nApakah ada hal lain yang ingin kamu ketahui tentang Raihan? 😊 \n",
           },
         ],
       },
@@ -74,7 +140,7 @@ export default async function runModel(user) {
 
   const result = await chatSession.sendMessage(user);
   // console.log(result.response.text());
-  return result.response.text()
+  return result.response.text();
 }
 
 // run();
