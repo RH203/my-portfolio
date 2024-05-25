@@ -39,7 +39,7 @@ export default function AboutMe() {
           </div>
 
           <ButtonGroup variant="outlined" ripple={true}>
-            <Button>
+            <Button >
               <LogoGithub />
             </Button>
             <Button>
