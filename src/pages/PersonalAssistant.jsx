@@ -26,7 +26,7 @@ export default function PersonalAssistant() {
   }, [userMessage]);
 
   return (
-    <div className="w-10/12 h-96 mx-auto mb-48 mt-36 overscroll-none">
+    <div className="w-10/12 h-96 mx-auto mb-48 mt-20 overscroll-none">
       <div className="flex flex-col gap-10">
         {/* Header Start */}
         <header className="text-center">
