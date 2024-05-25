@@ -25,7 +25,7 @@ function NavList() {
           About me
         </a>
       </Typography>
-      <Typography
+      {/* <Typography
         as="li"
         variant="paragraph"
         className="p-1 font-medium text-blue-gray-900 dark:text-white"
@@ -36,7 +36,7 @@ function NavList() {
         >
           My project
         </a>
-      </Typography>
+      </Typography> */}
       <Typography
         as="li"
         variant="paragraph"
