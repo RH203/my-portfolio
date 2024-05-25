@@ -25,7 +25,7 @@ function App() {
           </linearGradient>
         </defs>
       </Wave>
-      <MyProject />
+      {/* <MyProject /> */}
       <PersonalAssistant />
       <FooTer />
     </div>
