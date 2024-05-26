@@ -1,5 +1,6 @@
-import { Card, ButtonGroup, Button } from "@material-tailwind/react";
+import { Card, Button } from "@material-tailwind/react";
 import { LogoGithub, MailOutline, LogoInstagram } from "react-ionicons";
+import { Link, BrowserRouter as Router } from "react-router-dom";
 import TypeIt from "typeit-react";
 
 export default function AboutMe() {
@@ -38,17 +39,25 @@ export default function AboutMe() {
             </div>
           </div>
 
-          <ButtonGroup variant="outlined" ripple={true}>
-            <Button >
-              <LogoGithub />
-            </Button>
-            <Button>
-              <MailOutline />
-            </Button>
-            <Button>
-              <LogoInstagram />
-            </Button>
-          </ButtonGroup>
+          <Router>
+            <div className="flex gap-3 bg-transparent">
+              <Link to="https://github.com/RH203">
+                <Button variant="outlined">
+                  <LogoGithub />
+                </Button>
+              </Link>
+              <Link to="mailto:raihanz863@gmail.com">
+                <Button variant="outlined">
+                  <MailOutline />
+                </Button>
+              </Link>
+              <Link to="https://www.instagram.com/raihan.nnn/">
+                <Button variant="outlined">
+                  <LogoInstagram />
+                </Button>
+              </Link>
+            </div>
+          </Router>
         </div>
       </div>
     </Card>
