@@ -95,14 +95,13 @@ export default function PersonalAssistant() {
                   font-poppins
                   font-semibold
                   text-2xl
-                  text-white
-                  dark:text-black"
+                  text-black "
                 >
                   No data
                 </p>
               </div>
             ) : (
-              <p className="font-poppins font-medium text-xl text-white dark:text-black">
+              <p className="font-poppins font-medium text-xl text-black">
                 <TypeIt
                   getBeforeInit={(instance) => {
                     instance.type(response);
